@@ -27,6 +27,7 @@
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
           <input type="password" matInput required #pwd="ngModel" [(ngModel)]="user.password" name="password" pattern="[^ ].{8,}">
+          <mat-hint *ngIf="submitted && pwd.errors && pwd.errors['required']" >Password is required</mat-hint>
           <mat-hint *ngIf="submitted && pwd.errors && pwd.errors['pattern']" >invalid password</mat-hint>
         </mat-form-field>
         <mat-form-field appearance="fill">

@@ -1,6 +1,1 @@
-<app-login *ngIf="login"></app-login>
-<app-signup *ngIf="!login"></app-signup>
-<button class="toggle-btn" mat-flat-button (click)="toggle()" color="primary">
-  <mat-icon *ngIf="login" fontIcon="switch_right"></mat-icon>
-  <mat-icon *ngIf="!login" fontIcon="switch_left"></mat-icon>
-</button>
+<router-outlet></router-outlet>

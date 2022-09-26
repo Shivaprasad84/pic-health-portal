@@ -28,6 +28,7 @@ export class LoginComponent {
 
   clear(form: NgForm): void {
     form.reset();
+    form.resetForm();
     this.submitted = false;
   }
 }
