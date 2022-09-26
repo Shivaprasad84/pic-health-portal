@@ -1,0 +1,44 @@
+<div class="container">
+  <mat-card class="signup-form">
+    <form novalidate #userForm="ngForm" (ngSubmit)="submit(userForm)">
+      <mat-card-title>Sign Up</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput [(ngModel)]="user.email" name="email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+          <mat-hint *ngIf="submitted && email.errors && email.errors['required']" >Email is required</mat-hint>
+          <mat-hint *ngIf="email.errors && email.errors['pattern']" >Invalid Email</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input type="text" matInput [(ngModel)]="user.age" name="age" #age="ngModel" pattern="1[8-9]|[2-9][0-9]" required>
+          <mat-hint *ngIf="submitted && age.errors && age.errors['required']" >Age is required</mat-hint>
+          <mat-hint *ngIf="age.errors && age.errors['pattern']" >Invalid Age</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <mat-select [(ngModel)]="user.gender" #gender="ngModel" name="food" required>
+            <mat-option *ngFor="let gender of genders" [value]="gender">
+              {{ gender }}
+            </mat-option>
+          </mat-select>
+          <mat-hint *ngIf="submitted && gender.errors && gender.errors['required']">Gender is required</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput required #pwd="ngModel" [(ngModel)]="user.password" name="password" pattern="[^ ].{8,}">
+          <mat-hint *ngIf="submitted && pwd.errors && pwd.errors['pattern']" >invalid password</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Retype Password</mat-label>
+          <input type="password" matInput required #confirmPwd="ngModel" [(ngModel)]="user.confirmPassword" name="confirmPassword">
+          <mat-hint *ngIf="submitted && (pwd.value !== confirmPwd.value)" >passwords do not match</mat-hint>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-footer>
+        <button type="submit" class="signup-btn" mat-raised-button color="primary">Sign up</button>
+        <button type="button" class="cancel-btn" (click)="clear(userForm)" mat-raised-button color="warn">Cancel</button>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>

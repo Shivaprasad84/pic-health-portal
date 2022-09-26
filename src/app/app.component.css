@@ -1,0 +1,15 @@
+.toggle-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.mat-flat-button.toggle-btn {
+  min-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  max-width: 40px;
+  width: 40px;
+}

@@ -1,0 +1,38 @@
+.mat-card {
+  width: 400px;
+  padding: 26px;
+}
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card-title {
+  font-weight: 100;
+  color: slategray;
+}
+
+.mat-card-footer {
+  display: flex;
+  justify-content: end;
+}
+
+.signup-btn, .cancel-btn {
+  margin: 6px;
+  opacity: 0.9;
+}
+
+.mat-card-content {
+  margin-bottom: 0;
+}
+
+.mat-card-content>:first-child {
+  margin-top: 10px;
+}
+
+.mat-hint {
+  color: red;
+}
+
+.mat-form-field {
+  margin-bottom: 5px;
+}
