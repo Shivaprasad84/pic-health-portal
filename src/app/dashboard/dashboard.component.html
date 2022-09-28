@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <div class="spacer"></div>
+  <a mat-button routerLink="./calculators">Calculators</a>
+  <a mat-button routerLink="./doctors">Doctors</a>
+  <a mat-button routerLink="./appointments">Appointments</a>
+  <a mat-button routerLink="./healthtips">Health Tip</a>
+  <a mat-button routerLink="/home">Logout</a>
+</mat-toolbar>
+
+<h1>Users: </h1>
+<hr>
+<mat-list role="list" *ngFor="let user of usersArray">
+  <mat-list-item role="listitem"><b>Email:</b> {{ user.email }}</mat-list-item>
+  <mat-list-item role="listitem"><b>Age:</b>   {{ user.age }}</mat-list-item>
+  <mat-list-item role="listitem"><b>Gender:</b> {{ user.gender }}</mat-list-item>
+</mat-list>
+
+<router-outlet></router-outlet>

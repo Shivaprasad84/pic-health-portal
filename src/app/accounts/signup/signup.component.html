@@ -17,7 +17,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Gender</mat-label>
-          <mat-select [(ngModel)]="user.gender" #gender="ngModel" name="food" required>
+          <mat-select [(ngModel)]="user.gender" #gender="ngModel" name="gender" required>
             <mat-option *ngFor="let gender of genders" [value]="gender">
               {{ gender }}
             </mat-option>
@@ -26,7 +26,7 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input type="password" matInput required #pwd="ngModel" [(ngModel)]="user.password" name="password" pattern="[^ ].{8,}">
+          <input type="password" matInput required #pwd="ngModel" [(ngModel)]="user.password" name="password" pattern="[^ ].{3,}">
           <mat-hint *ngIf="submitted && pwd.errors && pwd.errors['required']" >Password is required</mat-hint>
           <mat-hint *ngIf="submitted && pwd.errors && pwd.errors['pattern']" >invalid password</mat-hint>
         </mat-form-field>

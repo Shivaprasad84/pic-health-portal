@@ -13,3 +13,16 @@ export class User {
     this.gender = gender;
   }
 }
+
+export class UserPostData {
+  email: string = '';
+  password?: string = '';
+  age: number | undefined = undefined;
+  gender: Gender = undefined;
+  constructor(email: string = '', password: string = '', age = undefined, gender: Gender = undefined) {
+    this.email = email;
+    this.password = password;
+    this.age = age;
+    this.gender = gender;
+  }
+}

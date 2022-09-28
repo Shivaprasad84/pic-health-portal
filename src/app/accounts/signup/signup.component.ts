@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Gender, User } from '../models/user.model';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { Gender, User, UserPostData } from '../models/user.model';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +18,7 @@ export class SignupComponent {
   ];
   submitted: boolean = false;
 
-  constructor() {
+  constructor(private userService: UserService, private routerService: Router) {
     this.user = new User();
   }
 
@@ -24,20 +26,22 @@ export class SignupComponent {
     this.submitted = true;
     if (form.valid) {
       console.log('Valid Form');
+      let postData = new UserPostData(
+        form.value['email'],
+        form.value['password'],
+        form.value['age'],
+        form.value['gender']
+      );
+      this.userService.signupUser(postData);
+      this.routerService.navigate(['./home/login']);
     } else {
       console.log('Invalid Form');
     }
-    console.log(form.value);
   }
 
   clear(form: NgForm): void {
     form.reset();
     form.resetForm();
     this.submitted = false;
-    // this.user.email = '';
-    // this.user.age = undefined;
-    // this.user.gender = undefined;
-    // this.user.password = '';
-    // this.user.confirmPassword = '';
   }
 }
