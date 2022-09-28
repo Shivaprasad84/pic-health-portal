@@ -1,8 +1,10 @@
 <mat-toolbar color="primary">
-  <span class="brand">Philips Health Portal</span>
+  <span textColor="hotpink" class="brand">Philips Health Portal</span>
   <span class="example-spacer"></span>
   <a class="btn" mat-flat-button [routerLink]="'./login'" color="primary">Login</a>
   <a class="btn" mat-flat-button [routerLink]="'./signup'" color="primary">Sign up</a>
 </mat-toolbar>
+
+<h3 class="main-header" textColor>Welcome to Philips Health Portal</h3>
 
 <router-outlet></router-outlet>

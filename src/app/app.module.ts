@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TextColorDirective } from './text-color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    TextColorDirective
   ],
   imports: [
     BrowserModule,
